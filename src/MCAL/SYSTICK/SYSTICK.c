@@ -105,7 +105,7 @@ SYSTICK_ErrorState SYSTICK_Start(u8 Periodicity){
 *@return: void
 */
 void SYSTICK_Stop(void){
-    SYSTICK->CTRL |=(STOP<<ENABLE_TIMER_BIT);
+    SYSTICK->CTRL &=(STOP<<ENABLE_TIMER_BIT);
 }
 
 /*############################################################################################################*/
