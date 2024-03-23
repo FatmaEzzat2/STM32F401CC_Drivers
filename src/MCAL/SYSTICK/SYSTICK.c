@@ -123,7 +123,7 @@ SYSTICK_ErrorState SYSTICK_SetTimeMS(u32 time){
       2- Divide by 1000 to get time in Mili Second
       3- Subtract 1 bec It starts counting from zero 
     */
-    u32 Loc_StkNumOfCounts =(Loc_StkClockFrequency * time)/1000; 
+    u32 Loc_StkNumOfCounts =(u32)(((u64)Loc_StkClockFrequency *(u64) time)/(u64)1000); 
 
 /*------------------------------------------Validation---------------------------------------------------*/
     SYSTICK_ErrorState returnError =SYSTICK_enumOK;

@@ -1,5 +1,5 @@
 /************************************************************************************************************
- *************************            File Name: SW_confg.c                             ************************
+ *************************            File Name: SW_confg.h                              ************************
  *************************            Layer	   : HAL                               ************************
  *************************            Module   : SWITCH                            ************************
  *************************            Version  : V 0.0                             ************************
@@ -7,20 +7,22 @@
  *************************            Author   : Fatma Ezzat                       ************************
  *************************Brief: This Header file defines functions for Switch driver*******************.
  ************************************************************************************************************/
-#include "SW.h"
-#include"../../MCAL/GPIO/GPIO.h"
+#ifndef HAL_1_SW_SW_CONFG_H_
+#define HAL_1_SW_SW_CONFG_H_
 
-SW_CONFG_t arrayOfSw[_SW_NUM]={
+/*Switch Names*/
 
-		[Switch_1]={
-			.port = PORT_A,
-			.pin  = PIN_0,
-			.connection= SW_PULLDOWN
-		},
-		[Switch_2]={
-			.port = PORT_B,
-			.pin  = PIN_0,
-			.connection= SW_PULLUP
-		}
-};
+typedef enum {
+	Switch_1=0,
 
+
+	/*Number of switches*/
+	_SW_NUM
+}SWs_t;
+
+/*Switch Connections*/
+#define SW_PULLUP      0x0001     /*GPIO_GP_INPUT_PULL_UP value*/
+#define SW_PULLDOWN    0x0002	  /*GPIO_GP_INPUT_PULL_DOWN value*/
+
+
+#endif /* HAL_1_SW_SW_CONFG_H_ */

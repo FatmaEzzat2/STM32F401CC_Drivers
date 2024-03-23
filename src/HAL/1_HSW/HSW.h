@@ -11,7 +11,7 @@
 #define HAL_1_SW_SW_H_
 
 #include"../../Lib/STD_TYPES.h"
-#include "SW_confg.h"
+#include "HSW_confg.h"
 
 /**
  *@brief : The Error List Type

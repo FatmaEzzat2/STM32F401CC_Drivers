@@ -14,9 +14,14 @@
 const LED_confg_t arrayOfLeds[_NUM_OF_LEDS]=
 {
 
-		[LED_2]={
+		[LED_1]={
 			.port= PORT_A,
 			.pin = PIN_1,
 			.connection = FORWARD,
 		},
+		[LED_2]={
+			.port= PORT_A,
+			.pin = PIN_3,
+			.connection = FORWARD,
+		}
 };

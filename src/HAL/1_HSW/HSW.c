@@ -7,9 +7,11 @@
  *************************            Author   : Fatma Ezzat                       ************************
  *************************Brief: This Header file defines functions for Switch driver*******************.
  ************************************************************************************************************/
-#include"SW.h"
+#include"HSW.h"
 #include"../../MCAL/GPIO/GPIO.h"
 
+
+u8 swState = 0;
 
 extern SW_CONFG_t arrayOfSw[_SW_NUM];
 /*
@@ -35,21 +37,33 @@ SW_ErrorState SW_init(void){
 	return returnError;
 }
 
-/*
- * @brief: A Function to get the state of switch --> Pressed or Not Pressed
- * @parameter: The pin number of switch within a specific port
- * @return :Error State
- * */
+void HSW_Runnable(void){
+	u8 current;
+
+	static u8 previous =0;
+	static u8 counts;   /*Number of counts to make sure that reading value is stable*/
+
+	GPIO_GetPinValue(arrayOfSw[Switch_1].port,arrayOfSw[Switch_1].pin,&current);
+	if (current == previous)
+	{
+		counts++;
+	}else{
+		counts =0;
+	}
+
+	/*Check if there are 5 identical readings*/
+
+	if (counts %5 == 0){
+		swState =current;
+	}
+	
+	/*Update Previous value*/
+	previous =current;
+}
+
 SW_ErrorState SW_getSwState(SWs_t switchName,u8* switchState){
 	SW_ErrorState returnError = SW_enumNOK;
-	u8 swState;
-
-	GPIO_GetPinValue(arrayOfSw[switchName].port,
-								   arrayOfSw[switchName].pin,
-								   &swState);
-
 	*switchState = swState;
 	return returnError;
-
 }
 
