@@ -17,27 +17,27 @@
 #include "../../HAL/0_LED/LED.h"
 #include "../../HAL/1_HSW/HSW.h"
 
-
-
 /********************************************************************************************************/
 /************************************************Defines*************************************************/
 /********************************************************************************************************/
 
-void Toggle_led_3(void){
-   static u8 ledState = LED_OFF;
-   ledState ^= 1;
+
+
+
+/*Every 50 ms*/
+
+void APP_Runnable(void){
+    u8 state =0;
+    static u8 ledState = LED_OFF;
+    SW_getSwState(Switch_1,&state);
+    if(state==PRESSED){
+       ledState ^= 1;
     if (ledState == LED_OFF )
     {
        LED_SetStatus(LED_1,LED_OFF);
     }else{
         LED_SetStatus(LED_1,LED_ON);
     }
-}
-/*Every 50 ms*/
-void APP_Runnable(void){
-    u8 state =0;
-    if(SW_getSwState(Switch_1,&state)==PRESSED){
-        Toggle_led_3();
     }
 }
 
