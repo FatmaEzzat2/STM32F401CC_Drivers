@@ -3,10 +3,10 @@
 
 #define Schedular_APP           0
 #define HSwitch_APP             1
+#define TrafficLight_APP        2
 
 
-
-#define APP    HSwitch_APP
+#define APP    TrafficLight_APP
 
 #endif // APP_APP_H_
 

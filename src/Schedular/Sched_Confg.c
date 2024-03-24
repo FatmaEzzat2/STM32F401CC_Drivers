@@ -5,14 +5,12 @@
 *Target:  STM32F401cc
 */
 #include "Sched.h"
-
- void APP_Runnable(void);
- void HSW_Runnable(void);
+#include "../APP/APP_Runnables.h"
 
 
 
 const User_RInfo UsrRInfo[_MAX]={
-   
+   /*
     [SW_Runnable]={
         .name="SW_Runnable",
         .periodicity=5,
@@ -21,8 +19,14 @@ const User_RInfo UsrRInfo[_MAX]={
     },
     [APP_runnable]={
         .name="APP_Runnable",
-        .periodicity=50,
+        .periodicity=100,
         .firstDelay=0,
         .cb=APP_Runnable,
-    }
+    }*/
+    [Traffic_light]={
+        .name ="Traffic",
+        .periodicity =2000,
+        .firstDelay =0,
+        .cb = TrafficLight_Runnable
+    } 
 };
