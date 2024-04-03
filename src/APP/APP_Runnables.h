@@ -16,6 +16,10 @@ void APP_Runnable(void);
 
 #elif (APP == TrafficLight_APP)
 void TrafficLight_Runnable(void);
+
+#elif (APP == LCD_TASK_APP)
+void LCD_Task_Runnable(void);
+void LCD_APP_Runnable(void);
 #endif
 
 #endif // APP_APP_RUNNABLES_H_

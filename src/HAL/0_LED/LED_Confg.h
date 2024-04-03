@@ -13,9 +13,9 @@
 
 /*LED Names*/
 typedef enum{
-	Green_LED,
-	Yellow_LED,
-	Red_LED,
+	LED_g,
+	LED_y,
+	LED_r,
 	_NUM_OF_LEDS
 }LEDs_t;
 

@@ -23,10 +23,23 @@ const User_RInfo UsrRInfo[_MAX]={
         .firstDelay=0,
         .cb=APP_Runnable,
     }*/
-    [Traffic_light]={
+    /*[Traffic_light]={
         .name ="Traffic",
         .periodicity =2000,
         .firstDelay =0,
         .cb = TrafficLight_Runnable
-    } 
+    } */
+    [LCD_TASK]={
+        .name ="LCD_TASK",
+        .periodicity =2,
+        .firstDelay =0,
+        .cb = LCD_Task_Runnable
+    },
+    [LCD_APP]={
+        .name ="LCD_TASK",
+        .periodicity =2000,
+        .firstDelay =1000,
+        .cb = LCD_APP_Runnable
+    }
+    
 };
