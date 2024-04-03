@@ -18,14 +18,6 @@
 #include "../../HAL/0_LED/LED.h"
 #include "../../HAL/2_LCD/LCD.h"
 
-#define SET_POS   1
-#define WAIT1     2
-#define WRITE     3
-#define WAIT2     4
-#define CLEAR     5
-#define WAIT3     6
-
-
 void Toggle_Led_1(void){
    static u8 ledState = LED_OFF;
    ledState ^= 1;
