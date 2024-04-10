@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "sw.h": "c",
-        "systick.h": "c",
-        "typeinfo": "c",
-        "HSwitch_APP.C": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
-}
