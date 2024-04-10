@@ -1,0 +1,10 @@
+{
+	"folders": [],
+	"settings": {
+		"files.associations": {
+			"stopwatch_confg.h": "c",
+			"stopwatch.h": "c",
+			"cstdio": "c"
+		}
+	}
+}
