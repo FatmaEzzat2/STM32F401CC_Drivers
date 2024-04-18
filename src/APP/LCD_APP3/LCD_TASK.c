@@ -78,9 +78,9 @@ void LCD_APP_Runnable(void)
         } 
         else if (counter==4)
         {
-            LCD_setCursorPosAsync(FIRST_LINE,9,Toggle_Led_3);
+            LCD_sendCommand(LCD_DISPLAY_ON_CURSOR_ON_BLINK_ON);
         } else if (counter==5){
-                LCD_writeStringAsync("135",3,Toggle_Led_3);
+                LCD_sendCommand(LCD_DISPLAY_ON_CURSOR_ON_BLINK_ON);
     }  
     }
 
