@@ -3,7 +3,8 @@
         "sw.h": "c",
         "systick.h": "c",
         "typeinfo": "c",
-        "HSwitch_APP.C": "cpp"
+        "HSwitch_APP.C": "cpp",
+        "nvic.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

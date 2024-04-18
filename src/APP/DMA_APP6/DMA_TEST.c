@@ -10,7 +10,7 @@
 #include "../../MCAL/RCC/RCC.h"
 #include "../../MCAL/SYSTICK/SYSTICK.h"
 #include "../../MCAL/NVIC/NVIC.h"
-#include "../../MCAL/DMA_2/DMA.h"
+#include "../../MCAL/DMA/DMA.h"
 #include "../../HAL/0_LED/LED.h"
 #include "../../HAL/0_LED/LED_Confg.h"
 
