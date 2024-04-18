@@ -17,6 +17,7 @@
 * In case We transfer data from memory to memeory we need to make some configuration such as:
 * 1- Channel will be equal Zero
 * 2- Disable Direct Mode bec We will use FIFO buffer 
+* The last step in configuration the DMA is to enable DMA
 */
 /********************************************************************************************************/
 /************************************************Includes************************************************/
