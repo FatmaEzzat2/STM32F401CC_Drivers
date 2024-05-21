@@ -8,6 +8,7 @@
 
 #if (APP == DMA_APP)
 #include "../../MCAL/RCC/RCC.h"
+#include "../../MCAL/FPEC/FPEC.h"
 #include "../../MCAL/SYSTICK/SYSTICK.h"
 #include "../../MCAL/NVIC/NVIC.h"
 #include "../../MCAL/DMA/DMA.h"
@@ -29,28 +30,30 @@ void TurnON_Led_2(void){
     u32 DST_array [10] = {0};
 
 int main(){
+   
+    FPEC_voidFlashSectorErase(5);
     
-    RCC_EnableAHBPeripherals(DMA2_EN);
-    RCC_EnableAHBPeripherals(GPIOB_EN);
-    NVIC_EnableInterrupt(NVIC_DMA2_STREAM0_INTERRUPT);
-    LED_init();
-    DMA_GetInterruptCBFunc(TurnON_Led_1,TurnON_Led_2);
-    STREAM_Request dataTransfer={
-        .Stream = 0,
-        .Peripheral_Address = SRC_array,
-        .Memory_0_Address =DST_array,
-        .Block_Length =10,
+    // RCC_EnableAHBPeripherals(DMA2_EN);
+    // RCC_EnableAHBPeripherals(GPIOB_EN);
+    // NVIC_EnableInterrupt(NVIC_DMA2_STREAM0_INTERRUPT);
+    // LED_init();
+    // DMA_GetInterruptCBFunc(TurnON_Led_1,TurnON_Led_2);
+    // STREAM_Request dataTransfer={
+    //     .Stream = 0,
+    //     .Peripheral_Address = SRC_array,
+    //     .Memory_0_Address =DST_array,
+    //     .Block_Length =10,
         
         
-    };
-    DMA_initStream();
-    DMA_SetAddressInSingleBuffer(DMA2,&dataTransfer);
-    DMA_Enable(DMA2,STREAM0);
+    // };
+    // DMA_initStream();
+    // DMA_SetAddressInSingleBuffer(DMA2,&dataTransfer);
+    // DMA_Enable(DMA2,STREAM0);
 
-    while (1)
-    {
-        /* code */
-    }
+    // while (1)
+    // {
+    //     /* code */
+    // }
     
 }
 
